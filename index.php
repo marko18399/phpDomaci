@@ -40,7 +40,7 @@ if ($podaci->num_rows == 0) {
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form id="addform" method="POST" enctype="multipart/form-data">
+      <form id="dodajForm" method="POST" enctype="multipart/form-data">
       <div class="modal-body">
             <div class="form-group">
             <label for="recipient-name" class="col-form-label">Ime:</label>
@@ -48,7 +48,7 @@ if ($podaci->num_rows == 0) {
             <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i>
             </div>
-            <input type="text" class="form-control" id="firstname" name="firstname" required="required">
+            <input type="text" class="form-control" id="ime" name="ime" required="required">
             </div>
           </div>
           <div class="form-group">
@@ -57,7 +57,7 @@ if ($podaci->num_rows == 0) {
             <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
             </div>
-            <input type="text" class="form-control" id="lastname" name="lastname" required="required">
+            <input type="text" class="form-control" id="prezime" name="prezime" required="required">
           </div>
           </div>
           <div class="form-group">
@@ -66,7 +66,7 @@ if ($podaci->num_rows == 0) {
             <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone" aria-hidden="true"></i></span>
             </div>
-            <input type="phone" class="form-control" id="phone" name="phone" required="required" maxLength="10" minLength="10">
+            <input type="phone" class="form-control" id="telefon" name="telefon" required="required" maxLength="10" minLength="10">
           </div>
           </div>
           <div class="form-group">
@@ -75,7 +75,7 @@ if ($podaci->num_rows == 0) {
             <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
             </div>
-            <input type="text" class="form-control" id="place" name="place" required="required">
+            <input type="text" class="form-control" id="mesto" name="mesto" required="required">
           </div>
           </div>
           <div class="form-group">
@@ -84,7 +84,7 @@ if ($podaci->num_rows == 0) {
             <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="fa fa-birthday-cake" aria-hidden="true"></i></span>
             </div>
-            <input type="date" class="form-control" id="birth" name="birht" required="required">
+            <input type="date" class="form-control" id="rodjendan" name="rodjendan" required="required">
           </div>
           </div>
           <div class="form-group">
@@ -93,7 +93,7 @@ if ($podaci->num_rows == 0) {
             <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="fa fa-university" aria-hidden="true"></i></span>
             </div>
-            <input type="text" class="form-control" id="faculty" name="faculty" required="required">
+            <input type="text" class="form-control" id="fakultet" name="fakultet" required="required">
           </div>
           </div>
         
