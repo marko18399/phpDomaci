@@ -13,14 +13,15 @@
 <body>
 <div class="container">
 <div class="alert alert alert-primary" role="alert">
-  <h4 class="text-primary text-center">Dobrodošli u Markov imenik, upišite se!</h4>
+  <h4 class="text-primary text-center"><b><i>MARKOV IMENIK</i></b></h4>
+  <p>Dobrodosli na stranicu Markovog imenika! Mozete se upisati u imenik, pogledati kontakte, svaki kontakt pojedinacno, mozete promeniti i obrisati kontakte. Takodje mozete i pretraziti kontakte u celom imeniku!<br> <b>Uzivajte!!!</b></p>
 </div>
 <!-- add/edit form modal -->
 <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Dodaj/Promeni kontakt <i class="fa fa-user-circle-o" aria-hidden="true"></i></h5>
+        <h5 class="modal-title" id="exampleModalLabel">Dodaj/Promeni kontakt</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -31,22 +32,22 @@
             <label for="recipient-name" class="col-form-label">Ime:</label>
             <div class="input-group mb-3">
             <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i>
             </div>
-            <input type="text" class="form-control" id="username" name="username" required="required">
+            <input type="text" class="form-control" id="firstname" name="firstname" required="required">
             </div>
           </div>
           <div class="form-group">
-            <label for="message-text" class="col-form-label">Email:</label>
+            <label for="message-text" class="col-form-label">Prezime:</label>
             <div class="input-group mb-3">
             <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
             </div>
-            <input type="email" class="form-control" id="email" name="email" required="required">
+            <input type="text" class="form-control" id="lastname" name="lastname" required="required">
           </div>
           </div>
           <div class="form-group">
-            <label for="message-text" class="col-form-label">Phone:</label>
+            <label for="message-text" class="col-form-label">Telefon:</label>
             <div class="input-group mb-3">
             <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone" aria-hidden="true"></i></span>
@@ -55,23 +56,37 @@
           </div>
           </div>
           <div class="form-group">
-          <label for="message-text" class="col-form-label">Photo:</label>
+            <label for="message-text" class="col-form-label">Mesto:</label>
             <div class="input-group mb-3">
             <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroupFileAddon01"><i class="fa fa-picture-o" aria-hidden="true"></i></span>
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
             </div>
-            <div class="custom-file">
-            <input type="file" class="custom-file-input" name="photo" id="userphoto" >
-            <label class="custom-file-label" for="userphoto">Choose file</label>
+            <input type="text" class="form-control" id="place" name="place" required="required">
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Rodjendan:</label>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-birthday-cake" aria-hidden="true"></i></span>
             </div>
+            <input type="date" class="form-control" id="birth" name="birht" required="required">
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Fakultet:</label>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-university" aria-hidden="true"></i></span>
             </div>
-
+            <input type="text" class="form-control" id="faculty" name="faculty" required="required">
+          </div>
           </div>
         
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-success" id="addButton">Submit</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Izadji</button>
+        <button type="submit" class="btn btn-success" id="addButton">Potvrdi</button>
         <input type="hidden" name="action" value="adduser">
         <input type="hidden" name="userid" id="userid" value="adduser">
       </div>
@@ -85,7 +100,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Profile <i class="fa fa-user-circle-o" aria-hidden="true"></i></h5>
+        <h5 class="modal-title" id="exampleModalLabel">Kontakt</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -93,15 +108,17 @@
       <div class="modal-body">
       <div class="container" id="profile"> 
         <div class="row">
-            <div class="col-sm-6 col-md-4">
-                <img src="http://placehold.it/100x100" alt="" class="rounded responsive" />
-            </div>
             <div class="col-sm-6 col-md-8">
-                <h4 class="text-primary">Virat Kohli</h4>
+                <h4 class="text-primary">Marko Savicevic</h4>
                 <p class="text-secondary">
-                <i class="fa fa-envelope-o" aria-hidden="true"></i> email@example.com
-                <br />
-                <i class="fa fa-phone" aria-hidden="true"></i> xxxxxxxxxx
+                <i class="fa fa-phone" aria-hidden="true"></i> 0603537889
+                <br>
+                <i class="fa fa-map-marker" aria-hidden="true"></i> Beograd
+                <br>
+                <i class="fa fa-birthday-cake" aria-hidden="true"></i> 18.3.1999.
+                <br>
+                <i class="fa fa-university" aria-hidden="true"></i> FON
+                <br>
                 </p>
                 <!-- Split button -->
             </div>
@@ -110,7 +127,7 @@
     </div>   
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Izadji</button>
       </div>
       </form>
     </div>
@@ -120,7 +137,7 @@
 
 <div class="row mb-3">
 <div class="col-3">
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userModal">Add New</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userModal">Unesi kontakt</button>
 </div>
 <div class="col-9">
 <div class="input-group input-group-lg">
