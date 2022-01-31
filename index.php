@@ -189,7 +189,7 @@ if ($podaci->num_rows == 0) {
     <td class="align-middle"><?php echo $red["rodjendan"]?></td>
     <td class="align-middle"><?php echo $red["fakultet"]?></td>
     <td class="align-middle">
-    <a href="#" class="btn btn-success mr-3 profile" data-toggle="modal" data-target="#userViewModal" title="Prfile">Vidi</a>
+    <a href="#" class="btn btn-success mr-3 profile" data-toggle="modal" data-target="#userViewModal" title="Profile">Vidi</a>
     <a href="#" class="btn btn-warning mr-3 edituser" data-toggle="modal" data-target="#userModal" title="Edit">Promeni </a>
     <a href="#" class="btn btn-danger deleteuser" data-userid="14" title="Delete">Obrisi</a>
     </td>
@@ -201,16 +201,6 @@ if ($podaci->num_rows == 0) {
     ?>
 </tbody>
 </table><!-- table -->
-<nav id="pagination">
-    <ul class="pagination justify-content-center">
-        <li class="page-item disabled"><a class="page-link" href="#" >Prethodna</a></li>
-        <li class="page-item active"><a class="page-link" href="#" >1</a></li>
-        <li class="page-item"><a class="page-link" href="#" >2</a></li>
-        <li class="page-item"><a class="page-link" href="#" >3</a></li>
-        <li class="page-item"><a class="page-link" href="#" >Sledeca</a></li>
-    </ul>
-</nav>
-<input type="hidden" name="currentpage" id="currentpage" value="1">
 </div>
 <div>
 
@@ -219,11 +209,6 @@ if ($podaci->num_rows == 0) {
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-</div>
-<div id="overlay" style="display:none;">
-    <div class="spinner-border text-danger" style="width: 3rem; height: 3rem;"></div>
-    <br/>
-    Ucitava se...
 </div>
 </body>
 <script src="./js/script.js"></script>
