@@ -22,6 +22,9 @@ body{
 .table{
     color:white !important;
 }
+th{
+    color:rgb(100, 170, 250) !important;
+}
 .container, .container-lg, .container-md, .container-sm, .container-xl {
   max-width: 1300px !important;
 }
