@@ -1,8 +1,18 @@
-<!-- <?php
+<?php
 
-    // require "./includes/database.php";
+require "./includes/database.php";
+require "./includes/kontakti.php";
 
-?> -->
+$podaci = Kontakt::getAll($conn);
+if (!$podaci) {
+    echo "Nastala je greska pri preuzimanju podataka";
+    die();
+}
+if ($podaci->num_rows == 0) {
+    echo "Nema kontakata u imeniku";
+    die();
+} else {
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -166,55 +176,29 @@
       <th scope="col"></th>
     </tr>
   </thead>
-  <tbody><tr>
-    <td class="align-middle">Marko</td>
-    <td class="align-middle">Savicevic</td>
-    <td class="align-middle">0603537889</td>
-    <td class="align-middle">Beograd</td>
-    <td class="align-middle">18.3.1999.</td>
-    <td class="align-middle">Fakultet organizacionih nauka</td>
+  <tbody>
+      <?php
+        while ($red = $podaci->fetch_array()) :  
+      ?>  
+  <tr>
+    <td class="align-middle"><?php echo $red["ime"]?></td>
+    <td class="align-middle"><?php echo $red["prezime"]?></td>
+    <td class="align-middle"><?php echo $red["telefon"]?></td>
+    <td class="align-middle"><?php echo $red["mesto"]?></td>
+    <td class="align-middle"><?php echo $red["rodjendan"]?></td>
+    <td class="align-middle"><?php echo $red["fakultet"]?></td>
     <td class="align-middle">
     <a href="#" class="btn btn-success mr-3 profile" data-toggle="modal" data-target="#userViewModal" title="Prfile">Vidi</a>
     <a href="#" class="btn btn-warning mr-3 edituser" data-toggle="modal" data-target="#userModal" title="Edit">Promeni </a>
     <a href="#" class="btn btn-danger deleteuser" data-userid="14" title="Delete">Obrisi</a>
     </td>
-    </tr><tr>
-      <td class="align-middle">Marko</td>
-      <td class="align-middle">Savicevic</td>
-      <td class="align-middle">0603537889</td>
-      <td class="align-middle">Beograd</td>
-      <td class="align-middle">18.3.1999.</td>
-      <td class="align-middle">Fakultet organizacionih nauka</td>
-      <td class="align-middle">
-      <a href="#" class="btn btn-success mr-3 profile" data-toggle="modal" data-target="#userViewModal" title="Prfile">Vidi</a>
-      <a href="#" class="btn btn-warning mr-3 edituser" data-toggle="modal" data-target="#userModal" title="Edit">Promeni </a>
-      <a href="#" class="btn btn-danger deleteuser" data-userid="14" title="Delete">Obrisi</a>
-      </td>
-    </tr><tr id="row-9">
-      <td class="align-middle">Marko</td>
-      <td class="align-middle">Savicevic</td>
-      <td class="align-middle">0603537889</td>
-      <td class="align-middle">Beograd</td>
-      <td class="align-middle">18.3.1999.</td>
-      <td class="align-middle">Fakultet organizacionih nauka</td>
-      <td class="align-middle">
-      <a href="#" class="btn btn-success mr-3 profile" data-toggle="modal" data-target="#userViewModal" title="Prfile">Vidi</a>
-      <a href="#" class="btn btn-warning mr-3 edituser" data-toggle="modal" data-target="#userModal" title="Edit">Promeni </a>
-      <a href="#" class="btn btn-danger deleteuser" data-userid="14" title="Delete">Obrisi</a>
-      </td>
-    </tr><tr>
-      <td class="align-middle">Marko</td>
-      <td class="align-middle">Savicevic</td>
-      <td class="align-middle">0603537889</td>
-      <td class="align-middle">Beograd</td>
-      <td class="align-middle">18.3.1999.</td>
-      <td class="align-middle">Fakultet organizacionih nauka</td>
-      <td class="align-middle">
-      <a href="#" class="btn btn-success mr-3 profile" data-toggle="modal" data-target="#userViewModal" title="Prfile">Vidi</a>
-      <a href="#" class="btn btn-warning mr-3 edituser" data-toggle="modal" data-target="#userModal" title="Edit">Promeni </a>
-      <a href="#" class="btn btn-danger deleteuser" data-userid="14" title="Delete">Obrisi</a>
-      </td>
-    </tr></tbody>
+    </tr>
+    <?php
+        endwhile;
+    }
+    
+    ?>
+</tbody>
 </table><!-- table -->
 <nav id="pagination">
     <ul class="pagination justify-content-center">
