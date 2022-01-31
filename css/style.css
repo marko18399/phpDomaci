@@ -1,0 +1,57 @@
+.container { padding-top:40px;}
+.rounded { width:100px}
+#overlay {
+    background: #ffffff;
+    color: #666666;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 5000;
+    top: 0;
+    left: 0;
+    float: left;
+    text-align: center;
+    padding-top: 25%;
+    opacity: .80;
+  }
+body{
+    background-image: url("../img/img1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.table{
+    color:white ;
+}
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+  max-width: 1300px !important;
+}
+.profile{
+    background-color:rgb(100, 170, 250) !important;
+    border-color: rgb(100, 170, 250) !important;
+}
+.edituser{
+    background-color:rgb(250, 215, 100) !important;
+    border-color: rgb(250, 215, 100) !important;
+}
+
+.deleteuser{
+    background-color:rgb(250, 100, 100) !important;
+    border-color: rgb(250, 100, 100) !important;
+}
+.btn-primary{
+    background-color: rgb(100, 250, 112);
+    border-color: rgb(100, 250, 112);
+}
+.btn-primary.focus, .btn-primary:focus {
+    color: #fff;
+    background-color: rgb(100, 250, 112) !important;
+    border-color: rgb(100, 250, 112) !important;
+}
+.alert-primary {
+    color: white;
+    background-color: #e788ff !important;
+    border-color: #e788ff !important;
+}
+h4 .text-primary{
+    color:white !important;
+}

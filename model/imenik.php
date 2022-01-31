@@ -1,5 +1,5 @@
 <?php
-
+    include "../broker.php";
     class Imenik{
 
         public $id;
@@ -19,6 +19,16 @@
             $this->rodjendan=$rodjendan;
             $this->fakultet=$fakultet;
         }
+
+        public function ret(){
+            return $this->conn;
+        }
+
+        #prikazi sve - getAll
+        #getById
+        #deleteById
+        #update
+        #addNew
     }
 
 
