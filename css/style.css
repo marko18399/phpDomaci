@@ -58,8 +58,8 @@ body{
     box-shadow: 0 0 0 0.2rem rgba(100, 250, 112, 0.26) !important;
 }
 .alert-primary {
-    background-color: #ededff !important;
-    border-color: #ededff !important;
+    background-color: #ffefae !important;
+    border-color: #ffefae !important;
     background-size: cover;
     height: 150px;
 }
